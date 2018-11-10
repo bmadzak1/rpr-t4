@@ -4,36 +4,42 @@ import java.util.ArrayList;
 
 public class Predmet {
     String imePredmeta;
-    int brojETCSKredita;
+    int brojECTSKredita;
     ArrayList<Student> studenti = new ArrayList<Student>();
     boolean izborni;
+    int brojStudenata;
     int kapacitet;
 
-    public Predmet(String ime, int etcs, boolean izborni){
-
+    public Predmet(String ime, int ects, boolean izborni){
+        imePredmeta = ime;
+        brojECTSKredita = ects;
+        this.izborni = izborni;
     }
 
     public void upisiStudenta(Student student){
-
+        if(brojStudenata < kapacitet) {
+            studenti.add(student);
+            brojStudenata++;
+        }
     }
 
     public void ispisiStudenta(Student student){
-
+        studenti.remove(student);
     }
 
     public boolean jeLiPun(){
-        return false;
+        return (brojStudenata == kapacitet);
     }
 
     public String dajIme(){
-        return null;
+        return imePredmeta;
     }
 
-    public int dajETCSKredite(){
-        return 0;
+    public int dajECTSKredite(){
+        return brojECTSKredita;
     }
 
     public void ispisiStudente(){
-
+        studenti.clear();
     }
 }
