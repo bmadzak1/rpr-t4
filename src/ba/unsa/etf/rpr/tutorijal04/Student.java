@@ -6,42 +6,43 @@ public class Student {
     String ime;
     String prezime;
     int brojIndeksa;
-    int ETCSKrediti;
+    int ECTSKrediti;
     ArrayList<Predmet> predmeti = new ArrayList<Predmet>();
 
     public Student(String ime, String prezime, int brojIndeksa){
-
+        this.ime = ime;
+        this.prezime = prezime;
+        this.brojIndeksa = brojIndeksa;
     }
 
     public String dajIme(){
-        return null;
+        return ime;
     }
 
     public String dajPrezime(){
-        return null;
+        return prezime;
     }
 
     public int dajBrojIndeksa(){
-        return 0;
+        return brojIndeksa;
     }
 
-    public int dajETCSKredite(){
-        return 0;
+    public int dajECRSKredite(){
+        return ECTSKrediti;
     }
 
-    public void postaviETCSKredite(int etcs){
-
+    public void postaviECTSKredite(int ects){
+        ECTSKrediti = ects;
     }
 
-    public void ispisi(){
-
-    }
-
-    public void upisiSemestar(Semestar semestar){
-
+    public String ispisi(){
+        String s;
+        s = ime + " " + prezime + "(" + brojIndeksa + ")";
+        return  s;
     }
 
     public void ispisiPredmete(){
-
+        predmeti.clear();
+        postaviECTSKredite(0);
     }
 }
